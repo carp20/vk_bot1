@@ -19,7 +19,7 @@ public class HelloBot extends LongPollBot {
             Message message = messageNew.getMessage();
             if (message.hasText()) {
                 if (message.getText().charAt(0) == '/') {
-                    String[] mess = message.getText().split(" ");
+                    String[] mess = message.getText().split("\\s+");
                     if (mess[0].equals("/work")) {
                         vk.messages.send()
                                 .setPeerId(message.getPeerId())
